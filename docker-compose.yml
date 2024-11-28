@@ -36,7 +36,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: mydatabase
     ports:
-      - "3306:3306"
+      - "3334:3306"
     volumes:
       - db_data:/var/lib/mysql
 
@@ -44,7 +44,7 @@ services:
     image: nginx:alpine
     container_name: nginx
     ports:
-      - "80:80"
+      - "8085:80"
     depends_on:
       - frontend
       - backend
