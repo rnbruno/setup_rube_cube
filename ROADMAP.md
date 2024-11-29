@@ -12,13 +12,19 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
    - Chamamos a function checkAndCreateTable para verificar se a tabela killer existe. 
    - Caso exista passamos a verificar se existem mais de 100 registro na tabela, se sim chamado SELECT de todos os dados de "killer" por padrão e exposta na API.
    - Caso não é realizada uma chama via axios para página https://github.com/rubcube/hiring-exercises/blob/master/backend/games.log demandada para o projeto. 
-   - Os dados são tratados e convertidos em json para posterior inserção na tabela killer.
+   - ![Diagrama de data killer json ](./services/images/roadmap/roadmap_4.PNG)
+   - Os dados são tratados¹ e convertidos em json para posterior inserção na tabela killer.
+   - ![Diagrama de data killer json ](./services/images/roadmap/roadmap_2.PNG)
+   - - Os dados inseridos na tabela killer.
    - ![Diagrama de data killer no DB ](./services/images/roadmap/roadmap_1.PNG)
+
+   -¹ Tratamento 
+   - ![Fragment function tratament killer ](./services/images/roadmap/roadmap_3.PNG)
 
 ### 2. **História: Exposição de Dados via API**
    - **Descrição**: Criamos uma API que retorna diversas consultas considerando a tabela killer.
    - **Como foi atendido**: Utilizamos o Express para criar a API e consultamos os dados da tabela killer e administradas em rotas especificas para cada fim. Listagem de todos assassinos, listagem geral, listagem contando todos com world e sem.
-
+   ![API killers for ID ](./services/images/roadmap/roadmap_5.PNG)
 ### 3. **História: Envio de Dados para uma API Externa**
    - **Descrição**: Implementamos a funcionalidade para enviar os dados de "kills" para uma API externa.
    - **Como foi atendido**: Usamos a biblioteca Axios para enviar os dados obtidos do banco de dados para outra API em formato JSON.
