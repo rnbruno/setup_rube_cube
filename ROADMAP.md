@@ -8,7 +8,12 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
 
 ### 1. **História: Integração com Banco de Dados E API externa**
    - **Descrição**: Implementamos a lógica de integração com o banco de dados para armazenar dados relacionados aos eventos de jogo, como "Killers", "Kills" e caso tenha a chave <world>.
-   - **Como foi atendido**: Criamos um acesso ao banco configurado e chamamos a function checkAndCreateTable para verificar se a tabela killer existe. Caso exista passamos a verificar se existem mais de 100 registro na tabela, se sim chamado SELECT de todos os dados de "killer" por padrão e exposta na API. Caso não é realizada uma chama via axio para página https://github.com/rubcube/hiring-exercises/blob/master/backend/games.log demandada para o projeto. Os dados são tratados e convertidos em json para posterior inserção na tabela killer.
+   - **Como foi atendido**: Ao iniciar o serviço no servidor com docker-compose o container-name backend é iniciado. Ao dividir em MVC os sistema tempos pastas para db - acesso ao banco de dados, services - acesso a api externa, controller - para armazeCriamos um acesso ao banco configurado.
+   - Chamamos a function checkAndCreateTable para verificar se a tabela killer existe. 
+   - Caso exista passamos a verificar se existem mais de 100 registro na tabela, se sim chamado SELECT de todos os dados de "killer" por padrão e exposta na API.
+   - Caso não é realizada uma chama via axios para página https://github.com/rubcube/hiring-exercises/blob/master/backend/games.log demandada para o projeto. 
+   - Os dados são tratados e convertidos em json para posterior inserção na tabela killer.
+   - ![Diagrama de data killer no DB ](./images/roadmap/roadmap_1.PNG)
 
 ### 2. **História: Exposição de Dados via API**
    - **Descrição**: Criamos uma API que retorna diversas consultas considerando a tabela killer.
