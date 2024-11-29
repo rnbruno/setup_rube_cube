@@ -1,0 +1,1 @@
+export { default } from "file:///var/www/html/setup_rube_cube/services/frontend/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"

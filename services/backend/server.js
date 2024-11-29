@@ -1,6 +1,11 @@
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
+// const { fetchGames } = require('./src/controllers/gameLogDataController');
+const districtRoutes = require('./src/routes/districtRoutes');
+const { getGameDataFromExternalAPI } = require('./src/services/gameLogService');
+const gameDataRoutes = require('./src/routes/dataGameLog'); 
+const { getKillCountByKiller, getAllKills, getKillCountByKillerAndWorld } = require('./src/models/killers');
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -14,10 +19,42 @@ db.connect(err => {
   console.log('Connected to MySQL!');
 });
 
+async function initServer() {
+  try {
+    console.log("Servidor iniciando...");
+    
+    const parsedLog = await getGameDataFromExternalAPI;
+
+    console.log("Log processado na inicialização:", parsedLog);
+  } catch (error) {
+    console.error("Erro ao processar o log na inicialização:", error.message);
+  }
+}
+
 app.get('/api', (req, res) => {
-  res.send('Hello from the backend!');
+  console.log("aqio ok");
+  res.send('Hello from the backend1!');
 });
 
-app.listen(3000, () => {
+app.use('/gameLog', gameDataRoutes);
+
+
+// app.get('/games', fetchGames); // Define a rota para acessar os dados dos jogos
+
+// app.get('/games', (req, res) => {
+//   res.send('Games O K!');
+// });
+
+ // Importa as rotas
+
+
+app.use(express.json()); // Middleware para lidar com JSON
+
+// Usando a rota para distritos
+app.use('/api', districtRoutes);
+
+
+app.listen(3000, async () => {
   console.log('Backend running on port 3000');
+  await initServer();
 });
