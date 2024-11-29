@@ -81,14 +81,14 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
   
    **SQL QUERIES**: 
       
-      ![Querie Function 1 ](./services/images/roadmap/roadmap_89.PNG)
+   ![Querie Function 1 ](./services/images/roadmap/roadmap_89.PNG)
 
-      **Endpoint**: [GET /api/getKillCountByKillerAndWorld](http://localhost:3000/api/fetchRankingWithNameAlteredInTime)
+   **Endpoint**: [GET /api/getKillCountByKillerAndWorld](http://localhost:3000/api/fetchRankingWithNameAlteredInTime)
 
 
-      **Resultado da API fetchRankingWithNameAlteredInTime**: Ranking some Name altered
+   **Resultado da API fetchRankingWithNameAlteredInTime**: Ranking some Name altered
 
-      ![GET /api/getKillCountByKillerAndWorld in JSON](./services/images/roadmap/roadmap_890.PNG)
+   ![GET /api/getKillCountByKillerAndWorld in JSON](./services/images/roadmap/roadmap_890.PNG)
 
 
 
