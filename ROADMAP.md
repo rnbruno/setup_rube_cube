@@ -32,7 +32,9 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
    **Function 1**: total de mortes, mortes por causa e mortes causadas pelo <world>
    **Descrição**: Total de mortes considerando as primeira tarefa do project em todos os itens de https://github.com/rubcube/hiring-exercises/blob/master/backend/games.log. Como na filtragem inserimos no banco somente os itens killers²
    ![logRegex filter ](./services/images/roadmap/roadmap_7.1.PNG)
+   
    **SQL QUERIES**: 
+   
    ![Querie Function 1 ](./services/images/roadmap/roadmap_7.PNG)
 
    **Endpoint**: [GET /api/getKillCountByKillerAndWorld](http://localhost:3000/api/getKillCountByKillerAndWorld)
