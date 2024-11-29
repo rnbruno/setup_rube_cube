@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { getKillById, getTotalKillAndWordlTrueAndFalse, getRankingWithNameAlteredInTime, getAllKills } = require('../models/killers');
+const { getKillById, getTotalKillAndWordlTrueAndFalse, getRankingWithNameAlteredInTime, getRankingWithNameAlteredForInitGame } = require('../models/killers');
 
 
 async function fetchGetKillById(req, res) {
@@ -37,7 +37,24 @@ async function fetchGetKillById(req, res) {
     }
   }
 
+
+  const fetchRankingWithNameAlteredForInitGame = async (req, res) => {
+    const initGameValue = req.query.initGame ? parseInt(req.query.initGame) : null; // Obtém o parâmetro 'initGame' da query string
+    console.log(initGameValue);
+    try {
+      // Chama o modelo para obter o ranking com base no parâmetro 'initGame'
+      const rankingData = await getRankingWithNameAlteredForInitGame(initGameValue);
+  
+      // Retorna os dados como JSON
+      res.json(rankingData);
+    } catch (error) {
+      // Caso haja erro, retorna status 500 com a mensagem de erro
+      res.status(500).json({ message: error.message });
+    }
+  };
   
   
+ 
   
-  module.exports = { fetchGetKillById, fetchTotalKillAndWordlTrueAndFalse, fetchRankingWithNameAlteredInTime };
+  
+  module.exports = { fetchGetKillById, fetchTotalKillAndWordlTrueAndFalse, fetchRankingWithNameAlteredInTime, fetchRankingWithNameAlteredForInitGame };

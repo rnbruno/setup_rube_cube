@@ -3,7 +3,7 @@
 const axios = require('axios');
 const { checkAndCreateTable, insertDataIntoTable, checkIfTableHasMoreThan100Rows, getAllKills } = require('../models/killers');
 
-function parseLogLine(logLine, erros, acertos) {
+function parseLogLine(logLine, erros, acertos, initGame) {
 
     logLine = logLine.trim()
 
@@ -36,6 +36,7 @@ function parseLogLine(logLine, erros, acertos) {
       },
       world: isWorldKill,  
       meansOfDeath: meansOfDeath,
+      initGame: initGame,
     };
 }
 
@@ -48,8 +49,12 @@ async function getDataFromExternalAPI() {
 
         let acertos = 0;
         let erros = 0;
+        let initGame = 1;
         const parsedData = gamesData.map(line => {
-            const parsedLine = parseLogLine(line, erros, acertos);
+            if (line.includes("InitGame")) {
+                initGame++;  // Incrementa o contador de initGame
+            }
+            const parsedLine = parseLogLine(line, erros, acertos, initGame);
             return parsedLine; 
         }).filter(line => line !== null); 
     

@@ -3,7 +3,7 @@ const express = require('express');
 const { initLogDatabase } = require('../services/gameLogService'); // Importando o serviço
 const { getKillsByTimeRange, getKillTotalWorldTrueAndFalse ,getKillCountByKiller, getKillCountByKillerAndWorld, getAllKills } = require('../models/killers');
 
-const { fetchGetKillById, fetchTotalKillAndWordlTrueAndFalse, fetchRankingWithNameAlteredInTime  } = require('../controllers/killerController');
+const { fetchGetKillById, fetchTotalKillAndWordlTrueAndFalse, fetchRankingWithNameAlteredForInitGame  } = require('../controllers/killerController');
 
 const router = express.Router();
 
@@ -12,7 +12,7 @@ Routes for Statistic killers
 */
 router.get('/fetchGetKillById', fetchGetKillById);
 router.get('/fetchTotalKillAndWordlTrueAndFalse', fetchTotalKillAndWordlTrueAndFalse);
-router.get('/fetchRankingWithNameAlteredInTime', fetchRankingWithNameAlteredInTime);
+router.get('/fetchRankingWithNameAlteredForInitGame', fetchRankingWithNameAlteredForInitGame);
 /*
 
 */

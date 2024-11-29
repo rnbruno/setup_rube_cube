@@ -23,7 +23,8 @@ function checkAndCreateTable() {
             killer_name VARCHAR(255),
             victim_name VARCHAR(255),
             world BOOLEAN,
-            means_of_death VARCHAR(255)
+            means_of_death VARCHAR(255),
+            init_game INT
           )
         `;
 
@@ -45,8 +46,8 @@ function checkAndCreateTable() {
 function insertDataIntoTable(logData) {
   return new Promise((resolve, reject) => {
     const insertQuery = `
-      INSERT INTO killer (time, event, killer_id, victim_id, weapon_id, killer_name, victim_name, world, means_of_death)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+      INSERT INTO killer (time, event, killer_id, victim_id, weapon_id, killer_name, victim_name, world, means_of_death, init_game)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
     const values = [
@@ -59,6 +60,7 @@ function insertDataIntoTable(logData) {
       logData.players.victim,
       logData.world,
       logData.meansOfDeath,
+      logData.initGame,
     ];
 
     connection.query(insertQuery, values, (err) => {
@@ -202,6 +204,100 @@ function checkIfTableHasMoreThan100Rows() {
   };
 
 
+  const getRankingWithNameAlteredForInitGame = (initGameValue = null) => {
+    return new Promise((resolve, reject) => {
+      // Sua consulta SQL com o filtro de 'init_game' dinâmico
+      
+      console.log(initGameValue);
+      
+      if (initGameValue == null) {
+        const selectQuery = `
+          SELECT 
+              killer_id, 
+              GROUP_CONCAT(DISTINCT killer_name ORDER BY time ASC SEPARATOR ', ') AS all_names, 
+              COUNT(*) AS total_kills,
+              -- Contagem de mortes (quantas vezes o jogador foi vítima)
+              (
+                  SELECT COUNT(*)
+                  FROM killer AS deaths
+                  WHERE deaths.victim_id = killer.killer_id 
+                    AND deaths.event = 'Kill'
+              ) AS total_deaths,
+              -- Subtração de mortes do total de kills
+              COUNT(*) - (
+                  SELECT COUNT(*)
+                  FROM killer AS deaths
+                  WHERE deaths.victim_id = killer.killer_id
+                    AND deaths.event = 'Kill'
+              ) AS kills_after_deaths
+          FROM 
+              killer AS killer
+          WHERE 
+              killer.event = 'Kill'
+              AND killer.killer_name != '<world>'  -- Exclui o <world> de killer_name
+          GROUP BY 
+              killer_id
+          ORDER BY 
+              total_kills DESC`;
+
+          connection.query(selectQuery, (err, results) => {
+            if (err) {
+              reject('Erro ao consultar dados: ' + err);
+            } else {
+              resolve(results);  // Retorna o número de kills por killer
+            }
+          });
+      }else{
+        const selectQuery = `
+          SELECT 
+            killer_id, 
+            GROUP_CONCAT(DISTINCT killer_name ORDER BY time ASC SEPARATOR ', ') AS all_names, 
+            COUNT(*) AS total_kills,
+            -- Contagem de mortes (quantas vezes o jogador foi vítima)
+            (
+                SELECT COUNT(*)
+                FROM killer AS deaths
+                WHERE deaths.victim_id = killer.killer_id 
+                  AND deaths.event = 'Kill'
+                  AND deaths.init_game = ?  -- Parâmetro dinâmico para 'init_game'
+            ) AS total_deaths,
+            -- Subtração de mortes do total de kills
+            COUNT(*) - (
+                SELECT COUNT(*)
+                FROM killer AS deaths
+                WHERE deaths.victim_id = killer.killer_id
+                  AND deaths.event = 'Kill'
+                  AND deaths.init_game = ?  -- Parâmetro dinâmico para 'init_game'
+            ) AS kills_after_deaths,
+            -- Adiciona a estatística de 'init_game'
+            MAX(init_game) AS init_game
+          FROM 
+            killer AS killer
+          WHERE 
+            killer.event = 'Kill'
+            AND killer.killer_name != '<world>'  -- Exclui o <world> de killer_name
+            AND killer.init_game = ?  -- Filtra apenas para o jogo iniciado
+          GROUP BY 
+            killer_id
+          ORDER BY 
+            total_kills DESC;
+        `;
+        connection.query(selectQuery, [initGameValue, initGameValue, initGameValue], (error, results) => {
+          if (error) {
+            reject(error);  // Caso ocorra um erro, rejeita a promise
+          } else {
+            resolve(results);  // Caso contrário, resolve a promise com os resultados
+          }
+        });
+      }
+  
+      // Aqui, usamos um array de parâmetros para passar o valor de 'init_game'
+      
+    });
+  };
+  
+
+
 
   
 
@@ -295,5 +391,6 @@ module.exports = {
   getKillTotalWorldTrueAndFalse,
   getKillById,
   getTotalKillAndWordlTrueAndFalse,
-  getRankingWithNameAlteredInTime
+  getRankingWithNameAlteredInTime,
+  getRankingWithNameAlteredForInitGame
 };
