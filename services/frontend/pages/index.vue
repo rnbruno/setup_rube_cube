@@ -8,39 +8,11 @@
         </article>
       </div>
       <div>
-        <article class="grid grid-cols-2 gap-4">
-          <n-card class="h-full">
-            <div class="flex h-full w-full flex-col">
-              <span class="font-semibold">Weekly Sales </span>
-              <div class="flex h-full w-full gap-8">
-                <div
-                  class="flex h-full flex-col justify-end gap-4 whitespace-nowrap"
-                >
-                  <span
-                    class="text-3xl font-semibold text-gray-500 dark:text-gray-300"
-                    >$74K</span
-                  >
-                  <div>
-                    <span
-                      class="rounded-xl bg-primary-100 px-2 py-1 text-xs font-semibold text-primary-500"
-                    >
-                      $74K
-                    </span>
-                  </div>
-                </div>
-                <div ref="lineChart" class="h-28 w-full" />
-              </div>
-            </div>
-          </n-card>
 
-          <n-card class="h-full">
-            <QuotePieChart class="min-h-[100px]" />
-          </n-card>
-        </article>
 
         <article class="mt-4">
           <n-card class="h-full">
-            <QuoteLineChart class="min-h-[200px]" />
+           
           </n-card>
         </article>
       </div>

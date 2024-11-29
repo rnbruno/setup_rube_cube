@@ -135,12 +135,12 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
 
    ![Front fetchRankingWithNameAlteredForInitGame initGame = number ](./services/images/roadmap/roadmap_89172.PNG)  
    
-   - Ao selecionar um item no Sleect uma nova chamada API é realizada para
+   - Ao selecionar um item no Selecionável uma nova chamada API é realizada para
    ```
    /api/fetchRankingWithNameAlteredForInitGame initGame = number
    ```
 
-   
+
 ## O Que Eu Adicionaria Se Tivesse Mais Tempo
 
 Se tivéssemos mais tempo, eu adicionaria as seguintes funcionalidades:
