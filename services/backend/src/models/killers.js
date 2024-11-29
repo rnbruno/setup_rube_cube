@@ -140,6 +140,27 @@ function checkIfTableHasMoreThan100Rows() {
     });
   };
 
+  const getTotalKillAndWordlTrueAndFalse = () => {
+    return new Promise((resolve, reject) => {
+      const selectQuery = `
+        SELECT 
+          COUNT(*) AS total_deaths, 
+          SUM(CASE WHEN world = true THEN 1 ELSE 0 END) AS deaths_with_world_true, 
+          SUM(CASE WHEN world = false THEN 1 ELSE 0 END) AS deaths_with_world_false
+        FROM 
+          killer`;
+  
+      connection.query(selectQuery, (err, results) => {
+        if (err) {
+          reject('Erro ao consultar dados: ' + err);
+        } else {
+          resolve(results);  // Retorna o número de kills por killer
+        }
+      });
+    });
+  };
+
+
   const getKillCountByKillerAndWorld = () => {
     return new Promise((resolve, reject) => {
       const selectQuery = `
@@ -183,8 +204,38 @@ function checkIfTableHasMoreThan100Rows() {
     });
   };
   
+  const getKillById = () => {
+    return new Promise((resolve, reject) => {
+      const selectQuery = `
+        SELECT 
+          killer_id, 
+          killer_name, 
+          world,               -- Incluindo o mundo
+          COUNT(*) AS total_points
+        FROM 
+          killer
+        WHERE 
+          event = 'Kill'
+            -- Filtrando pelo mundo 0
+        GROUP BY 
+          killer_id, 
+          killer_name, 
+          world                -- Agrupando também por mundo
+        ORDER BY 
+          total_points DESC;
+        `;
+  
+      connection.query(selectQuery, (err, results) => {
+        if (err) {
+          reject('Erro ao consultar dados: ' + err);
+        } else {
+          resolve(results);  // Retorna a contagem total e as contagens filtradas por 'world'
+        }
+      });
+    });
+  };
 
-
+ 
   
   
 
@@ -196,5 +247,7 @@ module.exports = {
   getKillsByTimeRange,
   getKillCountByKiller,
   getKillCountByKillerAndWorld,
-  getKillTotalWorldTrueAndFalse
+  getKillTotalWorldTrueAndFalse,
+  getKillById,
+  getTotalKillAndWordlTrueAndFalse
 };

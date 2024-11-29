@@ -36,23 +36,9 @@ app.get('/api', (req, res) => {
   res.send('Hello from the backend1!');
 });
 
-app.use('/gameLog', gameDataRoutes);
-
-
-// app.get('/games', fetchGames); // Define a rota para acessar os dados dos jogos
-
-// app.get('/games', (req, res) => {
-//   res.send('Games O K!');
-// });
-
- // Importa as rotas
-
+app.use('/api', gameDataRoutes);
 
 app.use(express.json()); // Middleware para lidar com JSON
-
-// Usando a rota para distritos
-app.use('/api', districtRoutes);
-
 
 app.listen(3000, async () => {
   console.log('Backend running on port 3000');

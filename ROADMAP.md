@@ -29,7 +29,14 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
    - **Descrição**: Implementamos algumas funcionalidades.
    - **Como foi atendido**: Usamos a biblioteca Axios para enviar os dados obtidos do banco de dados para outra API em formato JSON.
 
-   **Function 1**: total de mortes
+   **Function 1**: total de mortes, mortes por causa e mortes causadas pelo <world>
+   **Descrição**: Total de mortes considerando as primeira tarefa do project em todos os itens de https://github.com/rubcube/hiring-exercises/blob/master/backend/games.log. Como na filtragem inserimos no banco somente os itens killers²
+   ![logRegex filter ](./services/images/roadmap/roadmap_7.1.PNG)
+   **SQL QUERIES**: 
+   ![Querie Function 1 ](./services/images/roadmap/roadmap_7.PNG)
+
+   **Endpoint**: [GET /api/getKillCountByKillerAndWorld](http://localhost:3000/api/getKillCountByKillerAndWorld)
+
 
    **Function 2**: mortes por causa
 
