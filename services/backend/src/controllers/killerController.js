@@ -1,5 +1,6 @@
 const axios = require('axios');
-const { getKillById, getTotalKillAndWordlTrueAndFalse, checkIfTableHasMoreThan100Rows, getAllKills } = require('../models/killers');
+const { getKillById, getTotalKillAndWordlTrueAndFalse, getRankingWithNameAlteredInTime, getAllKills } = require('../models/killers');
+
 
 async function fetchGetKillById(req, res) {
    
@@ -25,6 +26,18 @@ async function fetchGetKillById(req, res) {
     }
   }
 
+  async function fetchRankingWithNameAlteredInTime(req, res) {
+      
+    try {
+      // Chama a função do serviço para buscar os distritos
+      const districts = await getRankingWithNameAlteredInTime();
+      res.json(districts); // Retorna os distritos como JSON
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  }
+
   
   
-  module.exports = { fetchGetKillById, fetchTotalKillAndWordlTrueAndFalse };
+  
+  module.exports = { fetchGetKillById, fetchTotalKillAndWordlTrueAndFalse, fetchRankingWithNameAlteredInTime };

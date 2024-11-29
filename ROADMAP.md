@@ -37,7 +37,7 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
    - **Descrição**: Implementamos algumas funcionalidades.
    - **Como foi atendido**: Usamos a biblioteca Axios para enviar os dados obtidos do banco de dados para outra API em formato JSON.
 
-   **Function 1**: total de mortes, mortes por causa e mortes causadas pelo <world>
+   **Task 1**: ADM see total de mortes, mortes por causa e mortes causadas pelo <world>
    **Descrição**: Total de mortes considerando as primeira tarefa do project em todos os itens de https://github.com/rubcube/hiring-exercises/blob/master/backend/games.log. Como na filtragem inserimos no banco somente os itens killers²
    
    ![logRegex filter ](./services/images/roadmap/roadmap_7.1.PNG)
@@ -54,7 +54,42 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
    ![GET /api/getKillCountByKillerAndWorld in JSON](./services/images/roadmap/roadmap_87.PNG)
 
 
-   **Function 3**: mortes causadas pelo <world>
+   **Task 2**: Player <world>
+ 
+   ```
+   Os jogadores começam com zero pontos
+   A cada kill o jogador ganha um ponto
+   A cada morte pelo mundo o jogador perde um ponto
+   É permitido pontuação negativa
+   O <world> não deve entrar no ranking de jogadores
+   Os jogadores podem mudar de nome no meio da partida, mas só o último nome deve ser considerado no ranking
+   ```
+   ***Observations***
+   - Total de 1069 itens kills
+   - 240 killer for <world> 
+   ***Item 1***
+   - A cada kill o jogador ganha um ponto
+   
+   ***Item 2***
+   - A cada morte pelo mundo o jogador perde um ponto
+ 
+   ***Item 3***
+   - É permitido pontuação negativa
+  
+   ***Item  4***
+   - O <world> não deve entrar no ranking de jogadores
+  
+   **SQL QUERIES**: 
+      
+      ![Querie Function 1 ](./services/images/roadmap/roadmap_89.PNG)
+
+      **Endpoint**: [GET /api/getKillCountByKillerAndWorld](http://localhost:3000/api/fetchRankingWithNameAlteredInTime)
+
+
+      **Resultado da API fetchRankingWithNameAlteredInTime**: Ranking some Name altered
+
+      ![GET /api/getKillCountByKillerAndWorld in JSON](./services/images/roadmap/roadmap_890.PNG)
+
 
 
 ## O Que Eu Adicionaria Se Tivesse Mais Tempo

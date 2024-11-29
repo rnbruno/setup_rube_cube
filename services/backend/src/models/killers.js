@@ -160,6 +160,51 @@ function checkIfTableHasMoreThan100Rows() {
     });
   };
 
+  const getRankingWithNameAlteredInTime = () => {
+    return new Promise((resolve, reject) => {
+      const selectQuery = `
+        SELECT 
+            killer_id, 
+            GROUP_CONCAT(DISTINCT killer_name ORDER BY time ASC SEPARATOR ', ') AS all_names, 
+            COUNT(*) AS total_kills,
+            -- Contagem de mortes (quantas vezes o jogador foi vítima)
+            (
+                SELECT COUNT(*)
+                FROM killer AS deaths
+                WHERE deaths.victim_id = killer.killer_id 
+                  AND deaths.event = 'Kill'
+            ) AS total_deaths,
+            -- Subtração de mortes do total de kills
+            COUNT(*) - (
+                SELECT COUNT(*)
+                FROM killer AS deaths
+                WHERE deaths.victim_id = killer.killer_id
+                  AND deaths.event = 'Kill'
+            ) AS kills_after_deaths
+        FROM 
+            killer AS killer
+        WHERE 
+            killer.event = 'Kill'
+            AND killer.killer_name != '<world>'  -- Exclui o <world> de killer_name
+        GROUP BY 
+            killer_id
+        ORDER BY 
+            total_kills DESC`;
+  
+      connection.query(selectQuery, (err, results) => {
+        if (err) {
+          reject('Erro ao consultar dados: ' + err);
+        } else {
+          resolve(results);  // Retorna o número de kills por killer
+        }
+      });
+    });
+  };
+
+
+
+  
+
 
   const getKillCountByKillerAndWorld = () => {
     return new Promise((resolve, reject) => {
@@ -249,5 +294,6 @@ module.exports = {
   getKillCountByKillerAndWorld,
   getKillTotalWorldTrueAndFalse,
   getKillById,
-  getTotalKillAndWordlTrueAndFalse
+  getTotalKillAndWordlTrueAndFalse,
+  getRankingWithNameAlteredInTime
 };
