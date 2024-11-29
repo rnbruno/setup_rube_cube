@@ -5,7 +5,7 @@ export default {
     },
     runtimeConfig: {
       public: {
-        apiBase: '/api'
+        apiBase: '/'
       }
     }
   };

@@ -1,32 +1,32 @@
-import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { getRequestHeader, splitCookiesString, setResponseStatus, setResponseHeader, send, getRequestHeaders, defineEventHandler, handleCacheHeaders, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, setResponseHeaders, createError, getRouterParam, getQuery as getQuery$1, readBody, getResponseStatusText } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/h3/dist/index.mjs';
+import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { getRequestHeader, splitCookiesString, setResponseStatus, setResponseHeader, send, getRequestHeaders, defineEventHandler, handleCacheHeaders, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, setResponseHeaders, createError, getRouterParam, getQuery as getQuery$1, readBody, getResponseStatusText } from 'file:///usr/src/app/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { mkdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { parentPort, threadId } from 'node:worker_threads';
-import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { stringify, uneval } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/devalue/index.js';
-import destr from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/destr/dist/index.mjs';
-import { withQuery, joinURL, withTrailingSlash, parseURL, withoutBase, getQuery, joinRelativeURL } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/ufo/dist/index.mjs';
-import { renderToString } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/vue/server-renderer/index.mjs';
-import { propsToString, renderSSRHead } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/@unhead/ssr/dist/index.mjs';
-import { createHooks } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/hookable/dist/index.mjs';
-import { createFetch as createFetch$1, Headers as Headers$1 } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/ofetch/dist/node.mjs';
-import { createCall, createFetch } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/unenv/runtime/fetch/index.mjs';
-import { klona } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/klona/dist/index.mjs';
-import defu, { defuFn } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/defu/dist/defu.mjs';
-import { snakeCase } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/scule/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/unstorage/drivers/fs.mjs';
-import { toRouteMatcher, createRouter } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/radix3/dist/index.mjs';
-import { getContext } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/unctx/dist/index.mjs';
+import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///usr/src/app/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { stringify, uneval } from 'file:///usr/src/app/node_modules/devalue/index.js';
+import destr from 'file:///usr/src/app/node_modules/destr/dist/index.mjs';
+import { withQuery, joinURL, withTrailingSlash, parseURL, withoutBase, getQuery, joinRelativeURL } from 'file:///usr/src/app/node_modules/ufo/dist/index.mjs';
+import { renderToString } from 'file:///usr/src/app/node_modules/vue/server-renderer/index.mjs';
+import { propsToString, renderSSRHead } from 'file:///usr/src/app/node_modules/@unhead/ssr/dist/index.mjs';
+import { createHooks } from 'file:///usr/src/app/node_modules/hookable/dist/index.mjs';
+import { createFetch as createFetch$1, Headers as Headers$1 } from 'file:///usr/src/app/node_modules/ofetch/dist/node.mjs';
+import { createCall, createFetch } from 'file:///usr/src/app/node_modules/unenv/runtime/fetch/index.mjs';
+import { klona } from 'file:///usr/src/app/node_modules/klona/dist/index.mjs';
+import defu, { defuFn } from 'file:///usr/src/app/node_modules/defu/dist/defu.mjs';
+import { snakeCase } from 'file:///usr/src/app/node_modules/scule/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file:///usr/src/app/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file:///usr/src/app/node_modules/unstorage/drivers/fs.mjs';
+import { toRouteMatcher, createRouter } from 'file:///usr/src/app/node_modules/radix3/dist/index.mjs';
+import { getContext } from 'file:///usr/src/app/node_modules/unctx/dist/index.mjs';
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { consola } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/consola/dist/index.mjs';
-import { captureRawStackTrace, parseRawStackTrace } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/errx/dist/index.js';
-import { isVNode, version, unref } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/vue/index.mjs';
-import { hash } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/ohash/dist/index.mjs';
-import { createServerHead as createServerHead$1, CapoPlugin } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/unhead/dist/index.mjs';
-import { defineHeadPlugin } from 'file:///var/www/html/setup_rube_cube/services/frontend/node_modules/@unhead/shared/dist/index.mjs';
+import { consola } from 'file:///usr/src/app/node_modules/consola/dist/index.mjs';
+import { captureRawStackTrace, parseRawStackTrace } from 'file:///usr/src/app/node_modules/errx/dist/index.js';
+import { isVNode, version, unref } from 'file:///usr/src/app/node_modules/vue/index.mjs';
+import { hash } from 'file:///usr/src/app/node_modules/ohash/dist/index.mjs';
+import { createServerHead as createServerHead$1, CapoPlugin } from 'file:///usr/src/app/node_modules/unhead/dist/index.mjs';
+import { defineHeadPlugin } from 'file:///usr/src/app/node_modules/@unhead/shared/dist/index.mjs';
 
 function hasReqHeader(event, name, includes) {
   const value = getRequestHeader(event, name);
@@ -172,13 +172,13 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _sLLyTczdpb = (function(nitro) {
+const _sgGUo64gLG = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
-const rootDir = "/var/www/html/setup_rube_cube/services/frontend";
+const rootDir = "/usr/src/app";
 
 const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
 
@@ -197,7 +197,7 @@ const devReducers = {
   URL: (data) => data instanceof URL ? data.toString() : void 0
 };
 const asyncContext = getContext("nuxt-dev", { asyncContext: true, AsyncLocalStorage });
-const _dHamo7u7gQ = (nitroApp) => {
+const _fBrvf2BFxy = (nitroApp) => {
   const handler = nitroApp.h3App.handler;
   nitroApp.h3App.handler = (event) => {
     return asyncContext.callAsync({ logs: [], event }, () => handler(event));
@@ -267,18 +267,18 @@ function onConsoleLog(callback) {
 }
 
 const plugins = [
-  _sLLyTczdpb,
-_dHamo7u7gQ
+  _sgGUo64gLG,
+_fBrvf2BFxy
 ];
 
-const _lazy_b8wqxi = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_rhCewE = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/__nuxt_error', handler: _lazy_b8wqxi, lazy: true, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_b8wqxi, lazy: true, middleware: false, method: undefined }
+  { route: '/__nuxt_error', handler: _lazy_rhCewE, lazy: true, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_rhCewE, lazy: true, middleware: false, method: undefined }
 ];
 
-const serverAssets = [{"baseName":"server","dir":"/var/www/html/setup_rube_cube/services/frontend/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/usr/src/app/server/assets"}];
 
 const assets = createStorage();
 
@@ -290,11 +290,11 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/var/www/html/setup_rube_cube/services/frontend","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/var/www/html/setup_rube_cube/services/frontend/server","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/var/www/html/setup_rube_cube/services/frontend/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/var/www/html/setup_rube_cube/services/frontend/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/var/www/html/setup_rube_cube/services/frontend/.data/kv","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/usr/src/app","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/usr/src/app/server","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/usr/src/app/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/usr/src/app/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/usr/src/app/.data/kv","ignore":["**/node_modules/**","**/.git/**"]}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -706,7 +706,7 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {
-    "apiBase": "/api"
+    "apiBase": "/"
   }
 };
 const envOptions = {
@@ -1168,8 +1168,8 @@ function publicAssetsURL(...path) {
 
 globalThis.__buildAssetsURL = buildAssetsURL;
 globalThis.__publicAssetsURL = publicAssetsURL;
-const getClientManifest = () => import('file:///var/www/html/setup_rube_cube/services/frontend/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
-const getServerEntry = () => import('file:///var/www/html/setup_rube_cube/services/frontend/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
+const getClientManifest = () => import('file:///usr/src/app/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getServerEntry = () => import('file:///usr/src/app/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
 const getSSRStyles = lazyCachedFunction(() => Promise.resolve().then(function () { return styles$1; }).then((r) => r.default || r));
 const getSSRRenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();

@@ -1,1 +1,1 @@
-export { default } from "file:///var/www/html/setup_rube_cube/services/frontend/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
+export { default } from "file:///usr/src/app/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"

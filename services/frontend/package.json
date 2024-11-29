@@ -2,10 +2,12 @@
     "name": "frontend",
     "version": "1.0.0",
     "scripts": {
-      "dev": "nuxt",
-      "build": "nuxi build",
-      "start": "nuxi start"
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
     },
+    
     "dependencies": {
       "nuxt": "^3.0.0"
     }
