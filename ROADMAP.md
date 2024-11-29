@@ -13,7 +13,7 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
    - Caso exista passamos a verificar se existem mais de 100 registro na tabela, se sim chamado SELECT de todos os dados de "killer" por padrão e exposta na API.
    - Caso não é realizada uma chama via axios para página https://github.com/rubcube/hiring-exercises/blob/master/backend/games.log demandada para o projeto. 
    - Os dados são tratados e convertidos em json para posterior inserção na tabela killer.
-   - ![Diagrama de data killer no DB ](./images/roadmap/roadmap_1.PNG)
+   - ![Diagrama de data killer no DB ](./services/images/roadmap/roadmap_1.PNG)
 
 ### 2. **História: Exposição de Dados via API**
    - **Descrição**: Criamos uma API que retorna diversas consultas considerando a tabela killer.
