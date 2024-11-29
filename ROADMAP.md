@@ -119,7 +119,11 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
 
    **Resultado da API fetchRankingWithNameAlteredForInitGame**: Rankin for initGame
 
+   ***initGame is null***
+
    ![GET /api/fetchRankingWithNameAlteredForInitGame is null ](./services/images/roadmap/roadmap_89170.PNG)
+
+   ***initGame is not null ***
 
    ![GET /api/fetchRankingWithNameAlteredForInitGame initGame = number ](./services/images/roadmap/roadmap_89171.PNG)   
 
