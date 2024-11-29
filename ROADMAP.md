@@ -49,7 +49,10 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
    **Endpoint**: [GET /api/getKillCountByKillerAndWorld](http://localhost:3000/api/getKillCountByKillerAndWorld)
 
 
-   **Function 2**: mortes por causa
+   **Resultado da API getKillCountByKillerAndWorld**: mortes por causa
+
+   [GET /api/getKillCountByKillerAndWorld in JSON](./services/images/roadmap/roadmap_87.PNG)
+
 
    **Function 3**: mortes causadas pelo <world>
 
