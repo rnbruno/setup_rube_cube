@@ -111,6 +111,18 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
 
    ![Init Game insert tabela  ](./services/images/roadmap/roadmap_8915.PNG)
 
+
+
+   **Endpoint**: [GET /api/fetchRankingWithNameAlteredForInitGame](http://localhost:3000/api/fetchRankingWithNameAlteredForInitGame)
+   OR
+            [GET /api/fetchRankingWithNameAlteredForInitGame](http://localhost:3000/api/fetchRankingWithNameAlteredForInitGame?initGame=n) n = number
+
+   **Resultado da API fetchRankingWithNameAlteredForInitGame**: Rankin for initGame
+
+   ![GET /api/fetchRankingWithNameAlteredForInitGame is null ](./services/images/roadmap/roadmap_89170.PNG)
+
+   ![GET /api/fetchRankingWithNameAlteredForInitGame initGame = number ](./services/images/roadmap/roadmap_89171.PNG)   
+
    ***Item 1***
     - A cada kill o jogador ganha um ponto
 
