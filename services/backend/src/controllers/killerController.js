@@ -54,7 +54,6 @@ async function fetchGetKillById(req, res) {
   };
   
   
- 
   
   
   module.exports = { fetchGetKillById, fetchTotalKillAndWordlTrueAndFalse, fetchRankingWithNameAlteredInTime, fetchRankingWithNameAlteredForInitGame };

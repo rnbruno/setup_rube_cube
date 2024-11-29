@@ -1,22 +1,8 @@
 <template>
   <div class="p-4">
     <!-- <section>Dashboard</section> -->
-    <section class="grid gap-4 md:grid-cols-2">
+    <section class="grid gap-4">
       <div>
-        <ul class="flex flex-wrap gap-4">
-          <li
-            v-for="(item, index) in quizAccessApp"
-            :key="index"
-            class="group flex cursor-pointer flex-col items-center rounded-xl bg-white p-4 px-6 hover:bg-primary-50"
-          >
-            <Icon
-              :name="item.icon"
-              class="transition-all group-hover:rotate-12 group-hover:scale-125 group-hover:text-primary-600"
-              size="30"
-            />
-            <h3>{{ item.title }}</h3>
-          </li>
-        </ul>
         <article class="mt-4">
           <QuoteRecent />
         </article>

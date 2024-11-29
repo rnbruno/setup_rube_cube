@@ -1,11 +1,14 @@
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
+const cors = require('cors');
 // const { fetchGames } = require('./src/controllers/gameLogDataController');
 const districtRoutes = require('./src/routes/districtRoutes');
 const { getGameDataFromExternalAPI } = require('./src/services/gameLogService');
 const gameDataRoutes = require('./src/routes/dataGameLog'); 
 const { getKillCountByKiller, getAllKills, getKillCountByKillerAndWorld } = require('./src/models/killers');
+
+app.use(cors());
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,

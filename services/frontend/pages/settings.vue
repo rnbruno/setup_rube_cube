@@ -4,11 +4,7 @@
       <div class="flex h-full gap-4 divide-x divide-slate-100">
         <nav class="w-52 p-4">
           <div>
-            <n-input v-model:value="search" :placeholder="$t('search')">
-              <template #prefix>
-                <Icon name="heroicons:magnifying-glass" />
-              </template>
-            </n-input>
+            
           </div>
 
           <div v-show="!search" class="mt-2">

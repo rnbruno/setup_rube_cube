@@ -714,7 +714,7 @@ const _inlineRuntimeConfig = {
       "iconSize": 20,
       "spaLoadingTemplate": ""
     },
-    "apiBase": "/"
+    "apiBase": "http://localhost:3000/api"
   }
 };
 const envOptions = {

@@ -31,6 +31,14 @@ export default {
       apiBase: 'http://localhost:3000/api' // Define o caminho base da API
     }
   },
+
+  // Aqui você pode acessar diretamente o runtimeConfig
+  hooks: {
+    'build:before'(builder) {
+      // Acessando o apiBase diretamente no build
+      console.log('API Base URL:', process.env.API_BASE || 'Not set');
+    }
+  }
   
 };
   

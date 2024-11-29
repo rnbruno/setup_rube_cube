@@ -129,7 +129,18 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
 
    ***Item 1***
     - A cada kill o jogador ganha um ponto
+    - 
+   ### 4. **História: Dashboard Sample** 
+   - Adicionei um front estilo dashboard simples
 
+   ![Front fetchRankingWithNameAlteredForInitGame initGame = number ](./services/images/roadmap/roadmap_89172.PNG)  
+   
+   - Ao selecionar um item no Sleect uma nova chamada API é realizada para
+   ```
+   /api/fetchRankingWithNameAlteredForInitGame initGame = number
+   ```
+
+   
 ## O Que Eu Adicionaria Se Tivesse Mais Tempo
 
 Se tivéssemos mais tempo, eu adicionaria as seguintes funcionalidades:
@@ -155,12 +166,3 @@ Se tivesse mais tempo, consideraria as seguintes melhorias e mudanças no proces
 
 1. **Estrutura de Código**
    - Refatoraria a estrutura do código para garantir uma separação mais clara de responsabilidades. Por exemplo, poderia mover a lógica de banco de dados para um arquivo separado e seguir padrões de arquitetura como MVC ou Repository para facilitar a manutenção a longo prazo.
-
-2. **Tratamento de Erros**
-   - Melhoraria o tratamento de erros nas funções de banco de dados e API, para garantir que erros sejam logados e que o cliente receba respostas mais úteis em caso de falha.
-
-3. **Implementação de Cache**
-   - Adicionaria um mecanismo de cache (como Redis) para evitar consultas repetidas ao banco de dados, melhorando o desempenho da API.
-
-4. **Logs e Monitoramento**
-   - Implementaria ferramentas de monitoramento e logging, como `Winston` ou `Morgan`, para registrar as operações da API e facilitar o rastreamento de problemas e performance em produção.

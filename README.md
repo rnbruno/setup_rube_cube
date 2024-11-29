@@ -1,4 +1,4 @@
-### LINGUAGENS _ JAVASCRIPT
+### LINGUAGENS _ JAVASCRIPT AND TYPESCRIPT
 ### FRAMEWORK _ EXPRESS JS
 
 ### 1. **Clone os Arquivos do Repositório**
@@ -52,6 +52,7 @@ Criando pastas de public, src, modals
 npm update para os containers
 ```
 
-Depois de migrar capturei um dashboard para montar um front rápido e mostrar os índices
-
+```
+Utilizei um dashboard no nuxt.js neste Github
+```
 ###https://github.com/story2Dev/nuxt3-admin-dashboard

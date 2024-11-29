@@ -3,9 +3,7 @@
     <template #trigger>
       <article class="flex h-10 w-10 items-center justify-center gap-2">
         <img
-          alt="Mark AI"
-          src="https://avatars.githubusercontent.com/u/18229355?v=4"
-          class="h-full w-full rounded-full object-cover"
+         
         />
       </article>
     </template>
