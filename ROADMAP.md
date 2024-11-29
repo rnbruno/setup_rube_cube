@@ -95,24 +95,24 @@ Neste tópico descreveremos as histórias que foram implementadas. As funcionali
    -Eu como administrador do jogo, quero poder consultar as estatísticas de um jogo específicou ou de todos os jogos de maneira estruturada por uma API para montar uma visualização para os jogadores
 
    ***Observations***
-      - Observamos o item Initgame.
+    - Observamos o item Initgame.
     
-      ![Init Game Observed  ](./services/images/roadmap/roadmap_891.PNG)
+   ![Init Game Observed  ](./services/images/roadmap/roadmap_891.PNG)
   
-      - Foi necessário alterar a lógica de inserção dos dados na tabela killer para inserir outro campo init_game 
+    - Foi necessário alterar a lógica de inserção dos dados na tabela killer para inserir outro campo init_game 
      
-      ![Init Game verified in count  ](./services/images/roadmap/roadmap_8912.PNG)
+   ![Init Game verified in count  ](./services/images/roadmap/roadmap_8912.PNG)
 
-      - e registrar qual é o jogo específico para cada registro.
+    - e registrar qual é o jogo específico para cada registro.
      
-      ![Init Game insert in json data  ](./services/images/roadmap/roadmap_8913.PNG)
+   ![Init Game insert in json data  ](./services/images/roadmap/roadmap_8913.PNG)
   
-      - Registramos na tabela killer 
+    - Registramos na tabela killer 
 
-      ![Init Game insert tabela  ](./services/images/roadmap/roadmap_8915.PNG)
+   ![Init Game insert tabela  ](./services/images/roadmap/roadmap_8915.PNG)
 
-      ***Item 1***
-      - A cada kill o jogador ganha um ponto
+   ***Item 1***
+    - A cada kill o jogador ganha um ponto
 
 ## O Que Eu Adicionaria Se Tivesse Mais Tempo
 
