@@ -1,32 +1,57 @@
+### LINGUAGENS _ JAVASCRIPT
+### FRAMEWORK _ EXPRESS JS
 
-Clone os Arquivos do Repositório e Laravel
+### 1. **Clone os Arquivos do Repositório**
+
 ```sh
 git clone https://github.com/rnbruno/setup_rube_cube app-rube_cube
 ```
-Ambiente com docker comp
+- **Descrição**: Implementar um ambiente isolado e portátil para a aplicação em contêineres para simplificar o desenvolvimento, a implantação e a escalabilidade.
+- **Tecnologias Utilizadas**:
+- 
+- WSL2 No windows;
+- Ubuntu 22;
+- 
+- Docker para criação, gerenciamento e execução dos contêineres.
+- docker-compose.yml: para configuração dos serviços
+- Containers Configurados:
+Backend (API ou servidor de aplicação).
+Banco de dados (MySQL).
+Ferramentas adicionais (Nginx) servir a aplicação.
+- **Comentário**: a solução facilidade na reprodução do ambiente em diferentes máquinas e cria um Isolamento de dependências.
+  
+### 2. **Iniciando container**
 
-docker-compose up -d
+- docker-compose up -d
+  
+  ![Container up ](./services/images/readme/readme_1.PNG)
 
-Iniciando containners de front, back, nginx e mysql
+- **Tecnologias Utilizadas**:
+- No back - end instalamos o expressj
+  
+-Iniciando containners de front, back, nginx e mysql
 
 http://localhost:3031 
 ```front-end
 http://localhost:3030 
 ```back-end
 
-
-No back - end instalamos o expressj
-
-npm install --save-dev nodemon 
+-npm install --save-dev nodemon 
 #para auxiliar na atualização de código 
 
 Para capturar os logs 
-Instalo o axios
 
+Instalo o axios
+```
 npm install axios
+```
 
 Criando pastas de public, src, modals
 
+```
 npm update para os containers
+```
 
+Depois de migrar capturei um dashboard para montar um front rápido e mostrar os índices
 
+###https://github.com/story2Dev/nuxt3-admin-dashboard
